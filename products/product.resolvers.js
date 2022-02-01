@@ -8,8 +8,14 @@ module.exports = {
     ProductByPrice: (_, args) => {
       return productModel.getProductByPrice(args.min, args.max);
     },
-    ProductByID: (_, args) => {
-      return productModel.getProductByID(args.id);
+    Product: (_, args) => {
+      return productModel.getProduct(args.id);
     },
+  },
+
+  Mutation: {
+    NewProduct: (_, args) => {
+      return productModel.newProduct(args.id, args.description, args.price);
+    }
   },
 };
